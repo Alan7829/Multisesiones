@@ -1,0 +1,166 @@
+<div class="container circus">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mt-4 mb-4">
+                <div>
+                    <img src="/images/User.png" id="imagen" class="imagen" />
+                    <input type="file" id="cargarImagen">
+                </div>
+            </div>
+            <div class="col-md-9 mt-4 mb-4">
+                {{#each errors}}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{text}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {{/each}}
+                <form action="/Usuarios" method="POST">
+                    <table class="table table-condensed blanquito">
+                        <tbody class="table ">
+                        <tbody>
+                            <tr>
+                                <td>Nombre completo:</td>
+                                <div class="form-group">
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="names" value="{{names}}"
+                                            required>
+                                    </td>
+                                </div>
+                            </tr>
+                            <tr>
+                                <td>Correo electrónico:</td>
+                                <div class="form-group">
+                                    <td>
+                                        <input type="email" class="form-control input-sm" name="user_email"
+                                            value="{{user_email}}" required>
+                                    </td>
+                                </div>
+                            </tr>
+                            <tr>
+                                <td>Contraseña:</td>
+                                <div class="form-group">
+                                    <td>
+                                        <input type="password" class="form-control input-sm" value="{{password}}"
+                                            name="password">
+                                    </td>
+                                </div>
+                            </tr>
+                        </tbody>
+                        </tbody>
+                    </table>
+
+                    <div class="form-group form-check">
+                        {{#if user.Inicio}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="inicio" checked>Página de Inicio</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="inicio">Página de Inicio</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group form-check">
+                        {{#if fotos}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="fotos" checked>Página de Fotos</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="fotos">Página de Fotos</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group form-check">
+                        {{#if ilustraciones}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="ilustraciones" checked>Página de Ilustraciones</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="ilustraciones">Página de Ilustraciones</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group form-check">
+                        {{#if juegoMesa}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="juegosMesa" checked>Página de Juegos de mesa</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="juegosMesa">Página de Juegos de mesa</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group form-check">
+                        {{#if videoJuegos}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="videoJuegos" checked>Página de VideoJuegos</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="videoJuegos">Página de VideoJuegos</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group form-check">
+                        {{#if usuarios}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="usuarios" checked>Página de Usuarios</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="usuarios">Página de Usuarios</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group check ">
+                        <button class="btn btn-primary" type="submit">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container circus">
+    <div class="row">
+        <div class="col mt-4 mb-3">
+            <table class="table table-condensed blanquito">
+                <thead class="thead-light table">
+                    <tr class="table blanquito">
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each users}}
+                    <tr class="table">
+                        <td>
+                            {{names}}
+                        </td>
+                        <td>
+                            {{user_email}}
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Vertical button group">
+                                {{!-- <form class="form-inline" action="/Usuarios/Editar/{{_id}}">
+                                    <button class="btn btn-success" type="submit">Editar</button>
+                                </form> --}}
+                                <a href="/Usuarios/Editar/{{_id}}" role="button" class="btn btn-success">Editar</a>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Vertical button group">
+                                <form class="form-inline">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="btn btn-danger bt" type="submit" id="{{_id}}">Eliminar</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="/javascripts/API.js">
+
+</script>

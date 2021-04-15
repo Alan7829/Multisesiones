@@ -1,0 +1,113 @@
+<div class="container circus">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mt-4 mb-4">
+                <div>
+                    <img src="/images/User.png" id="imagen" class="imagen" />
+                    <input type="file" id="cargarImagen">
+                </div>
+            </div>
+            <div class="col-md-9 mt-4 mb-4">
+                {{#each errors}}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{text}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {{/each}}
+                <form action="/Usuarios/Editar/{{user._id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="_method" value="PUT">
+                    <table class="table table-condensed blanquito">
+                        <tbody class="table ">
+                        <tbody>
+                            <tr>
+                                <td>Nombre completo:</td>
+                                <div class="form-group">
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="names"
+                                            value="{{user.names}}" required>
+                                    </td>
+                                </div>
+                            </tr>
+                            <tr>
+                                <td>Correo electrónico:</td>
+                                <div class="form-group">
+                                    <td>
+                                        <input type="email" class="form-control input-sm" name="user_email"
+                                            value="{{user.user_email}}" required>
+                                    </td>
+                                </div>
+                            </tr>
+                        </tbody>
+                        </tbody>
+                    </table>
+
+                    <div class="form-group form-check">
+                        {{#if user.Inicio}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="inicio" checked>Página de Inicio</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="inicio">Página de Inicio</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group form-check">
+                        {{#if user.Fotos}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="fotos" checked>Página de Fotos</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="fotos">Página de Fotos</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group form-check">
+                        {{#if user.Ilustraciones}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="ilustraciones" checked>Página de Ilustraciones</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="ilustraciones">Página de Ilustraciones</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group form-check">
+                        {{#if user.JuegoMesa}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="juegosMesa" checked>Página de Juegos de mesa</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="juegosMesa">Página de Juegos de mesa</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group form-check">
+                        {{#if user.VideoJuegos}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="videoJuegos" checked>Página de VideoJuegos</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="videoJuegos">Página de VideoJuegos</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group form-check">
+                        {{#if user.Usuarios}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="usuarios" checked>Página de Usuarios</label>
+                        {{else}}
+                        <label class="check text-white" style="font-weight:bold"><input type="checkbox"
+                                class="form-check-input" name="usuarios">Página de Usuarios</label>
+                        {{/if}}
+                    </div>
+
+                    <div class="form-group check ">
+                        <button class="btn btn-primary" type="submit">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

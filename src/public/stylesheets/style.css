@@ -1,0 +1,244 @@
+body{
+  /* background-image: url(../images/fondo.jpg); */
+  background: #9796f0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  background-size: 100%;
+  font-family: Arial, Helvetica, sans-serif
+}
+  
+a{
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+
+.nav-link::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: rgba(207, 194, 194, 0.897);
+  transition: width .3s;
+}
+
+
+.nav-link:hover::after{
+
+    width: 100%;
+    transition: width .3s;
+    
+}
+
+.nav-link:hover{
+  color: rgb(0, 171, 184);
+}
+
+.menu ul li a:hover{
+  background-color: rgba(255, 255, 255, 0.486);
+  border-radius: 40px;
+  padding: 10px 10px;
+}
+
+
+.logo {
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+  margin: 0;
+  padding: 2px;
+  line-height: 1;
+  font-weight: 750;
+  letter-spacing: 2px;
+}
+
+table {
+  border-radius: 10px;
+  background-color: rgba(37, 186, 212, 0.767);
+  border: 1px solid rgba(255, 255, 255, 0.486);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+tr {
+  transition: all .2s ease-in;
+  cursor: pointer;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.486);
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.486);
+  transform: scale(1.02);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 750px) {
+  table {
+      width: 90%;
+  }
+}
+
+.imagen{
+height: 250px;
+width: 200px;
+}
+
+.circus{
+  border-radius: 10px;
+  background-color: 
+  rgba(221, 218, 213, 0.575);
+  justify-content: center;
+}
+
+.blanquito{
+  color: white;
+  font-weight: bold;
+  border: transparent!important;
+}
+
+.navbar-brand:hover{
+
+  color:rgb(0, 171, 184);
+
+}
+
+.texto_Two{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  font-size: 45px;
+}
+
+.miCard{
+  background-color: rgba(222, 170, 235, 0.829);
+  border-radius: 40px;
+}
+
+.boton{
+  background-color: rgb(255, 255, 255);
+  color: #e681d0;
+  margin-top: 8px;
+}
+
+.card1 img{      
+  height: 200px;
+  width: 100%;    
+  border-radius: 24px 24px 0 0;
+}
+
+.card1{
+  height: 420px;
+  width: 350px;
+
+}
+
+.card5{
+  height: 300px;
+  width: 1090px;
+  background-color: rgba(222, 170, 235, 0.829);
+  border-radius: 40px;
+}
+
+.card5 img{      
+  height: 300px;
+  width: 100%;    
+  border-radius: 24px 24px 24px 24px;
+}
+
+.card3{
+  height: 700px;
+  width: 450px;
+  background-color: rgba(222, 170, 235, 0.829);
+  border-radius: 40px;
+}
+
+.card3 img{      
+  height: 500px;
+  width: 450px;    
+  border-radius: 24px 24px 24px 24px;
+}
+
+.card4{
+  height: 500px;
+  width: 1090px;
+  background-color: rgba(222, 170, 235, 0.829);
+  border-radius: 40px;
+}
+
+.card4 img{      
+  height: 350px;
+  width: 1090px;    
+  border-radius: 24px 24px 24px 24px;
+}
+
+.card{
+  width: 1090px;
+  height: 600px;
+  border-radius: 24px 24px 24px 24px
+}
+.card img{      
+  height: 600px;
+  width: 1090px;    
+  border-radius: 24px 24px 24px 24px;
+}
+
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: #f7f8fa;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #ffc107;
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #aab3c7;
+}
+
+.btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 9px 35px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-top: 40px;
+  border: 2px solid #ffc107;
+  color: #fff;
+}
+
+.check{
+  margin-left: 100px;
+}
+
